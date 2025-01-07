@@ -21,6 +21,8 @@ chmod +x /home/pi/.config/autostart/UPS.desktop
 
 
 ## UPS.py
+![immagine](https://github.com/user-attachments/assets/5da4503e-7c3e-49f5-86cf-1e338884162e)
+
 ![immagine](https://github.com/user-attachments/assets/8abe3309-0420-4b2e-bba5-7f998f03d1b3)
 
 Waveshare-UPS-3S
