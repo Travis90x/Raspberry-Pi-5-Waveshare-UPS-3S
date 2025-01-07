@@ -212,10 +212,10 @@ def update_gui():
             if percent < 0:
                 percent = 0
 
-            voltage_label_var.set(f"{bus_voltage:.3f} V")
-            current_label_var.set(f"{current:.6f} A")
-            power_label_var.set(f"{power:.3f} W")
-            percent_label_var.set(f"{percent:.1f} %")
+            voltage_label_var.set(f"{bus_voltage:.1f} V")
+            current_label_var.set(f"{current:.1f} A")
+            power_label_var.set(f"{power:.1f} W")
+            percent_label_var.set(f"{percent:.0f} %")
         except Exception as e:
             error_label_var.set(f"Errore: {e}")
 
@@ -230,20 +230,25 @@ power_label_var = tk.StringVar(value="N/A")
 percent_label_var = tk.StringVar(value="N/A")
 error_label_var = tk.StringVar(value="")
 
-ttk.Label(root, text="Tensione (Load Voltage):").grid(row=0, column=0, sticky="w")
+ttk.Label(root, text="Voltage:").grid(row=0, column=0, sticky="w")
 ttk.Label(root, textvariable=voltage_label_var).grid(row=0, column=1, sticky="e")
 
-ttk.Label(root, text="Corrente (Current):").grid(row=1, column=0, sticky="w")
+ttk.Label(root, text="Current:").grid(row=1, column=0, sticky="w")
 ttk.Label(root, textvariable=current_label_var).grid(row=1, column=1, sticky="e")
 
-ttk.Label(root, text="Potenza (Power):").grid(row=2, column=0, sticky="w")
+ttk.Label(root, text="Power:").grid(row=2, column=0, sticky="w")
 ttk.Label(root, textvariable=power_label_var).grid(row=2, column=1, sticky="e")
 
-ttk.Label(root, text="Percentuale (Percent):").grid(row=3, column=0, sticky="w")
+ttk.Label(root, text="Percent:").grid(row=3, column=0, sticky="w")
 ttk.Label(root, textvariable=percent_label_var).grid(row=3, column=1, sticky="e")
 
 ttk.Label(root, textvariable=error_label_var, foreground="red").grid(row=4, column=0, columnspan=2)
 
 ina219 = INA219(addr=0x41)
 Thread(target=update_gui, daemon=True).start()
+# Imposta la dimensione e la posizione della finestra (larghezza x altezza + offset_x + offset_y)
+# 300x200 è la dimensione (esempio) e +offset_x +offset_y posiziona la finestra.
+root.geometry("150x100+1750+0")  # 1200: offset orizzontale (in alto a destra), 0: offset verticale
+
+
 root.mainloop()
