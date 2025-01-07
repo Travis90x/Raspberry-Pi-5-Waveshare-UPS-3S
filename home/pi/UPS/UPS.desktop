@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=UPS
+Exec=python3 /home/pi/UPS/UPS.py
+Icon=python3
+Terminal=true
+Categories=Utility;
