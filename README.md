@@ -16,6 +16,7 @@ nano /home/pi/.config/autostart/UPS.desktop
     Terminal=true
     Categories=Utility;
 ```
+chmod +x /home/pi/UPS/UPS.py
 chmod +x /home/pi/.config/autostart/UPS.desktop
 ```
 
