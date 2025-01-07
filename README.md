@@ -1,22 +1,12 @@
 # Raspberry-Pi-5-Waveshare-UPS-3S
 Raspberry Pi 5 - GUI Battery Monitor for Waveshare UPS 3S
 ```
-mkdir -p /home/pi/UPS/
-```
-copy here UPS.py
-```
+git clone https://github.com/Travis90x/Raspberry-Pi-5-Waveshare-UPS-3S.git
+cd ~/Raspberry-Pi-5-Waveshare-UPS-3S
 mkdir -p /home/pi/.config/autostart
-nano /home/pi/.config/autostart/UPS.desktop
-```
-    [Desktop Entry]
-    Type=Application
-    Name=UPS
-    Exec=python3 /home/pi/UPS/UPS.py
-    Icon=python3
-    Terminal=true
-    Categories=Utility;
-```
-chmod +x /home/pi/UPS/UPS.py
+cp UPS.desktop /home/pi/.config/autostart/UPS.desktop
+cp UPS.desktop /home/pi/Desktop/UPS.desktop
+chmod +x UPS.py
 chmod +x /home/pi/.config/autostart/UPS.desktop
 ```
 
